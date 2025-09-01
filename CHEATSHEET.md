@@ -1,329 +1,376 @@
 # AI-Native Dev Cheatsheet
 
-With AI deeply integrated into your development workflow - whether through AI-powered IDEs like Cursor, command-line tools like Claude Code and Aider, or AI-enabled editors like VS Code with Copilot - the friction of using AI is reduced. This cheatsheet covers development with integrated AI tools where context switching is minimal and AI understands your codebase.
+Using AI-integrated development tools like Cursor, Aider, or GitHub Copilot can improve productivity on suitable tasks. This comprehensive cheatsheet provides honest assessments across all common development tasks.
 
-## Tool Categories
-
-### AI-Powered IDEs
-
-- Cursor: Fork of VS Code with deep AI integration
-- Windsurf: Codeium's AI IDE
-- Replit: Cloud IDE with AI built-in
-
-### Command-Line AI Tools
-
-- Claude Code: Anthropic's CLI tool for autonomous coding tasks
-- Aider: CLI tool for AI pair programming
-
-### AI-Enhanced Editors
-
-- VS Code + GitHub Copilot: AI autocomplete and chat
-- JetBrains + AI Assistant: IDE suite with AI features
-
-The productivity gains are similar across these categories: 40-60% overall improvement when AI is seamlessly integrated into your workflow.
-
-## Comprehensive Task Assessment Map (AI IDE Context)
-
-### High-Value Tasks (60-80% time savings)
-| Dev Task | Traditional Time | With AI IDE | Why It Excels |
-|----------|-----------------|--------------|---------------|
-| **Test Generation** | 30-45 min | 5-10 min | Sees your code context, generates comprehensive suites instantly |
-| **Documentation** | 30 min | 3-5 min | Inline generation, understands your API structure |
-| **Boilerplate/CRUD** | 45-60 min | 5-10 min | Knows your patterns, generates consistent code |
-| **Component Scaffolding** | 15 min | 2-3 min | Matches existing components, follows team patterns |
-| **Mock Data** | 30 min | 1-2 min | Instant generation with realistic variety |
-| **TypeScript Types** | 20-30 min | 2-3 min | Infers from usage, converts JS files instantly |
-| **Refactoring** | 20 min | 3-5 min | Sees all usages, suggests multiple approaches |
-| **Validation Schemas** | 20-25 min | 3-5 min | Generates from types, includes all edge cases |
-| **Code Comments** | 15 min | 1-2 min | Inline as you code, context-aware |
-| **Database Migrations** | 30-40 min | 5-8 min | Understands your schema, generates up/down |
-
-### Moderate-Value Tasks (40-60% time savings)
-| Dev Task | Traditional Time | With AI IDE | Why Still Moderate |
-|----------|-----------------|--------------|-------------------|
-| **SQL Queries** | 25 min | 8-10 min | Still needs performance optimization |
-| **API Client Generation** | 45 min | 10-15 min | Needs service-specific error handling |
-| **Complex Debugging** | 30 min | 12-15 min | Requires system understanding |
-| **GraphQL Schemas** | 30 min | 10-12 min | Resolver logic needs customization |
-| **CI/CD Config** | 60 min | 20-25 min | Environment-specific needs remain |
-| **Architecture Planning** | 60 min | 30 min | Can suggest, but needs human judgment |
-
-### Low-Value Tasks (20-40% time savings)
-| Dev Task | Traditional Time | With AI IDE | Why Limited |
-|----------|-----------------|--------------|-------------|
-| **Commit Messages** | 1 min | 30 sec | Already quick, AI adds consistency |
-| **PR Descriptions** | 5 min | 2-3 min | Needs human context for "why" |
-| **Import Organization** | 30 sec | 20 sec | IDEs already do this well |
-| **Variable Renaming** | 2 min | 1 min | IDE refactoring often sufficient |
-
-### Still Avoid AI For
-| Dev Task | Why Avoid | Better Alternative |
-|----------|-----------|-------------------|
-| **Security Implementation** | Too risky, subtle vulnerabilities | Security specialists |
-| **Payment Processing** | Compliance and risk | Established libraries |
-| **Performance Optimization** | Needs real metrics | Profilers first |
-| **Complex Business Logic** | Lacks domain context | Domain experts |
-| **Production Incidents** | No system access | Monitoring and logs |
+**Results vary significantly** based on experience, codebase, team dynamics, and domain.
 
 ---
 
-## AI IDE Workflow Patterns
+## ⚠️ Critical Warnings First
 
-### The Tab-Complete Flow
-```
-1. Start typing function/component
-2. AI suggests completion
-3. Tab to accept, modify inline
-4. AI updates related code automatically
-```
+### For Junior Developers (0-3 years experience)
+**Use AI tools sparingly.** Extensive use early in your career can severely impact:
+- Problem-solving skill development
+- Debugging ability
+- Understanding of fundamentals
+- Technical interview performance
+- Ability to work without AI tools
 
-### The Comment-Driven Development
-```
-// Component that displays user profile with edit capability
-[AI generates entire component]
-
-// Add validation for email field
-[AI adds validation inline]
-
-// Make this responsive
-[AI adds responsive classes]
-```
-
-### The Refactor Pattern
-```
-1. Select code block
-2. Ask: "Make this more efficient"
-3. Review AI suggestions (usually 2-3 options)
-4. Choose and apply instantly
-```
-
-### The Test-After Pattern
-```
-1. Write implementation
-2. Cursor: "Generate comprehensive tests"
-3. AI sees implementation, generates matching tests
-4. Run tests immediately in IDE
-```
+### Security & Compliance - NEVER Use AI For:
+- Authentication/authorization implementation
+- Cryptographic implementations or security algorithms
+- Payment processing logic
+- HIPAA/PCI/SOC2 compliance code
+- Password handling or encryption keys
+- Random number generation for security
+- Database transaction handling
+- Financial calculations
+- Production incident response
 
 ---
 
-## Practical Commands for AI-integrated tools
+## Prerequisites for Success
 
-### Cursor/Claude Code Commands
+Before adopting AI tools, ensure you have:
+- [ ] Strong code review culture
+- [ ] Established coding standards
+- [ ] Security review process in place
+- [ ] Team agreement on AI usage guidelines
+- [ ] Understanding of data privacy implications
+- [ ] Plan to maintain and practice core skills
 
-**High-Impact Commands:**
-- `"Add comprehensive tests for this file"`
-- `"Add JSDoc comments to all functions"`
-- `"Convert this file to TypeScript"`
-- `"Add error handling throughout"`
-- `"Make this component responsive"`
-- `"Add loading and error states"`
-- `"Generate mock data for testing"`
-- `"Create a similar component but for [X]"`
-
-**Refactoring Commands:**
-- `"Split this into smaller functions"`
-- `"Extract this into a custom hook"`
-- `"Make this more performant"`
-- `"Apply our team patterns"`
-- `"Remove code duplication"`
-
-**Debugging Commands:**
-- `"Why is this failing?"`
-- `"Fix the TypeScript errors"`
-- `"Add null checks"`
-- `"Handle edge cases"`
+**Without these prerequisites, AI integration may decrease code quality.**
 
 ---
 
-## Implementation Strategy for AI-integrated tools
+## Comprehensive Task Assessment
 
-### Day 1: Immediate Wins
-- [ ] Let AI complete your current function
-- [ ] Generate tests for existing code
-- [ ] Add missing TypeScript types
-- [ ] Document your APIs
+### 🟢 High-Value Tasks (30-60% potential time savings)
 
-### Week 1: Build Momentum
-- [ ] Use comment-driven development for new features
-- [ ] Refactor old code with AI assistance
-- [ ] Generate all boilerplate
-- [ ] Let AI handle all mock data
+#### Core Development
+| Task | Traditional | With AI | Key Consideration |
+|------|-------------|---------|-------------------|
+| **Unit Test Generation** | 30-45 min | 10-20 min | Verify tests actually test functionality |
+| **Documentation** | 30 min | 8-15 min | Add human context for "why" |
+| **Boilerplate/CRUD** | 45-60 min | 15-25 min | Watch for pattern drift |
+| **Mock Data** | 30 min | 2-5 min | Best AI use case |
+| **Regular Expressions** | 15-20 min | 3-5 min | Test edge cases thoroughly |
+| **TypeScript Types** | 20-30 min | 5-10 min | Review for accuracy |
+| **Validation Schemas** | 20-25 min | 5-10 min | Zod/Yup generation works well |
 
-### Week 2: Advanced Patterns
-- [ ] Multi-file refactoring
-- [ ] AI-driven code reviews
-- [ ] Automated migration scripts
-- [ ] Pattern standardization
+#### API & Documentation
+| Task | Traditional | With AI | Key Consideration |
+|------|-------------|---------|-------------------|
+| **OpenAPI/Swagger Specs** | 40 min | 10-15 min | From existing code |
+| **Postman Collections** | 30 min | 5-10 min | From API specs |
+| **API Client Generation** | 45 min | 15-20 min | From OpenAPI specs |
+| **README Files** | 30 min | 8-12 min | Structure and basics |
 
-### Month 1: Full Integration
-- [ ] AI handles 80% of boilerplate
-- [ ] Tests generated for all new code
-- [ ] Documentation always current
-- [ ] Team patterns consistently applied
+#### DevOps & Configuration
+| Task | Traditional | With AI | Key Consideration |
+|------|-------------|---------|-------------------|
+| **Basic Dockerfiles** | 20 min | 5-8 min | Standard patterns only |
+| **CI/CD Configs** | 60 min | 20-30 min | GitHub Actions, Jenkins |
+| **Environment Configs** | 20 min | 8-10 min | .env templates |
+
+### 🟡 Moderate-Value Tasks (15-30% potential time savings)
+
+#### Backend Development
+| Task | Traditional | With AI | Why Moderate |
+|------|-------------|---------|--------------|
+| **SQL Queries** | 25 min | 15-20 min | Need optimization |
+| **Database Migrations** | 30 min | 20-25 min | Need careful review |
+| **GraphQL Schemas** | 30 min | 20 min | Resolvers need customization |
+| **Background Workers** | 40 min | 25-30 min | Queue-specific logic |
+| **ETL Pipelines** | 45 min | 30 min | Business logic heavy |
+| **Batch Processing** | 35 min | 25 min | Performance considerations |
+
+#### Frontend Development
+| Task | Traditional | With AI | Why Moderate |
+|------|-------------|---------|--------------|
+| **Component Scaffolding** | 15 min | 8-12 min | Team patterns vary |
+| **CSS/Styling** | 20 min | 12-15 min | Design system specific |
+| **Form Validation** | 25 min | 15-20 min | UX requirements vary |
+| **State Management** | 30 min | 20 min | Architecture dependent |
+
+#### Infrastructure & DevOps
+| Task | Traditional | With AI | Why Moderate |
+|------|-------------|---------|--------------|
+| **Terraform/IaC** | 45 min | 30 min | Environment specific |
+| **Kubernetes Manifests** | 40 min | 25-30 min | Cluster specific |
+| **Ansible Playbooks** | 35 min | 25 min | Infrastructure dependent |
+| **Monitoring Configs** | 30 min | 20 min | Metric understanding needed |
+
+#### Testing
+| Task | Traditional | With AI | Why Moderate |
+|------|-------------|---------|--------------|
+| **Integration Tests** | 40 min | 25-30 min | Complex scenarios |
+| **E2E Tests** | 60 min | 40 min | Flow understanding needed |
+| **Contract Tests** | 30 min | 20 min | API specifics |
+
+### 🔴 Low-Value or Risky Tasks (0-15% savings or negative)
+
+#### Should Approach with Caution
+| Task | Why Limited/Risky | Better Approach |
+|------|------------------|-----------------|
+| **Performance Tests** | Needs real metrics | Use profiling tools |
+| **Caching Strategies** | Needs traffic patterns | Measure first |
+| **Database Indexing** | Needs query analysis | Use EXPLAIN plans |
+| **Rate Limiting** | Needs threat model | Security review |
+| **Complex Debugging** | Can mislead | Use debugger |
+| **Architecture Design** | Lacks context | Team discussion |
+| **Accessibility Fixes** | Compliance risk | Use a11y tools |
+| **Security Headers** | High risk if wrong | Security checklist |
+
+#### Often Slower with AI
+| Task | Why | Alternative |
+|------|-----|------------|
+| **Commit Messages** | Edit time > write time | Write directly |
+| **Code Review Comments** | Needs human insight | Personal feedback |
+| **PR Descriptions** | Missing context | Manual writing |
+| **Import Organization** | IDEs do this better | Use IDE features |
+| **Variable Naming** | Context dependent | Think it through |
+
+### ❌ Never Use AI For
+
+#### Security & Compliance
+- Authentication/authorization logic
+- Encryption/cryptography
+- Payment processing
+- Compliance code (HIPAA, PCI, GDPR)
+- Security-critical validation
+- Session management
+- Token generation
+
+#### Critical Systems
+- Database transactions
+- Concurrent programming
+- Memory management
+- Financial calculations
+- Production debugging
+- Incident response
+- Error recovery logic
 
 ---
 
-## Team Adoption with AI-integrated tools
+## Task-Specific Guidance
 
-### Team Standards
+### Frontend Tasks
 ```markdown
-## With AI-integrated tools, Default to Using AI For:
-✅ All test generation
-✅ All documentation
-✅ All boilerplate and CRUD
-✅ Component scaffolding
-✅ Refactoring suggestions
-✅ Type definitions
-✅ Mock data
-✅ Code comments
-✅ Error handling patterns
-✅ Validation logic
+✅ Good for AI:
+- Component boilerplate
+- Basic form validation
+- Mock data generation
+- Test generation
 
-## Still Review Carefully:
-⚠️ Business logic implementation
-⚠️ Performance-critical code
-⚠️ Database queries (check execution plans)
-⚠️ External API integrations
+⚠️ Review Carefully:
+- State management setup
+- Performance optimizations
+- Accessibility implementation
+- Animation logic
 
-## Never Use AI For:
-❌ Security/auth implementation
-❌ Payment processing
-❌ Encryption/hashing
-❌ Production credentials
+❌ Avoid AI:
+- Security-related code
+- Payment UI logic
+- Complex business logic
 ```
 
-### Quality Checklist for AI-integrated tools
-- [ ] Generated code matches patterns?
-- [ ] Tests are meaningful (not just coverage)?
-- [ ] Documentation explains "why"?
-- [ ] No sensitive data in prompts?
-- [ ] Performance implications considered?
-- [ ] Security reviewed for critical paths?
+### Backend Tasks
+```markdown
+✅ Good for AI:
+- CRUD endpoints
+- Basic validations
+- Database seeders
+- API documentation
+
+⚠️ Review Carefully:
+- Background job logic
+- Caching implementation
+- Rate limiting
+- Database queries
+
+❌ Avoid AI:
+- Authentication
+- Transaction handling
+- Financial logic
+```
+
+### DevOps Tasks
+```markdown
+✅ Good for AI:
+- Basic Docker configs
+- CI/CD templates
+- Environment setup
+- Documentation
+
+⚠️ Review Carefully:
+- Infrastructure as Code
+- Monitoring setup
+- Deployment scripts
+- Security configs
+
+❌ Avoid AI:
+- Production secrets
+- Security policies
+- Compliance configs
+```
+
+### Mobile Development
+```markdown
+✅ Good for AI:
+- Component scaffolding
+- Basic layouts
+- Test generation
+- App store descriptions
+
+⚠️ Review Carefully:
+- Platform-specific code
+- Push notifications
+- Deep linking
+- Background tasks
+
+❌ Avoid AI:
+- In-app purchases
+- Security storage
+- Biometric auth
+```
+
+### Data Engineering
+```markdown
+✅ Good for AI:
+- SQL queries (review performance)
+- ETL pipeline structure
+- Data validation scripts
+- Report templates
+
+⚠️ Review Carefully:
+- Data transformations
+- Aggregation logic
+- Migration scripts
+- Batch processing
+
+❌ Avoid AI:
+- PII handling
+- Compliance logic
+- Financial calculations
+```
 
 ---
 
-## Success Metrics with AI-integrated tools
+## Realistic Workflow by Task Type
 
-Track for 30 days:
-- Lines of code generated vs. written
-- Test coverage increase
-- Documentation completeness
-- Time to implement features
-- Bug rate changes
+### For Boilerplate Tasks
+```
+1. Generate with AI (2 min)
+2. Review for patterns (1 min)
+3. Adjust to standards (2 min)
+Total: 5 min vs 15 min manual
+```
 
-**Typical improvements with AI-integrated tools:**
-- 50-70% reduction in boilerplate time
-- 80% increase in test coverage
-- 90% of code documented
-- 40-60% faster feature delivery
-- Bug rates stable or improved
+### For Complex Logic
+```
+1. Generate with AI (2 min)
+2. Review carefully (5 min)
+3. Fix issues (5 min)
+4. Debug problems (10 min)
+Total: 22 min vs 20 min manual (negative value!)
+```
 
-**Warning signs:**
-- Accepting suggestions without understanding
-- Skipping reviews because "AI wrote it"
-- Performance degradation
-- Security vulnerabilities
-
----
-
-## Common Pitfalls with AI-integrated tools
-
-| Pitfall | Solution |
-|---------|----------|
-| Over-trusting suggestions | Always review, especially for logic |
-| Lost understanding | Read generated code carefully |
-| Pattern drift | Define team standards clearly |
-| Speed over quality | Maintain review processes |
-| Context overload | Keep prompts focused |
+### For Tests
+```
+1. Generate test suite (2 min)
+2. Review for coverage (3 min)
+3. Add missing cases (5 min)
+4. Verify they work (5 min)
+Total: 15 min vs 30 min manual
+```
 
 ---
 
-## Tips for Maximum Productivity
+## Domain-Specific Considerations
 
-### Keyboard Shortcuts Are Key
-- Learn accept/reject shortcuts
-- Multi-cursor for bulk generation
-- Quick command palette access
+### Web Development
+- **High value:** Component generation, tests, docs
+- **Medium value:** State management, API integration
+- **Low value:** Performance optimization, SEO
 
-### Context Is Everything
-- Keep relevant files open
-- Use descriptive variable names
-- Add comments for AI context
+### Systems Programming
+- **High value:** Documentation, basic tests
+- **Medium value:** Boilerplate code
+- **Avoid:** Memory management, concurrency
 
-### Iterative Refinement
-- Don't accept first suggestion
-- Ask for alternatives
-- Refine incrementally
+### Data Engineering
+- **High value:** SQL generation, documentation
+- **Medium value:** ETL pipelines, validations
+- **Avoid:** Financial calculations, PII handling
 
-### The 80/20 Rule
-- AI does 80% of the work
-- You do the critical 20%
-- Review everything
+### DevOps/SRE
+- **High value:** Config templates, runbooks
+- **Medium value:** IaC, monitoring setup
+- **Avoid:** Security policies, incident response
 
----
-
-## Get Started with AI-integrated tools Today
-
-1. **Install Cursor or Claude Code**
-2. **Start with your current task** - let AI complete it
-3. **Generate tests** for your last feature
-4. **Refactor** something that's been bothering you
-5. **Document** that API you've been meaning to
-
-The learning curve is minimal - most developers are productive within hours, not days.
+### Mobile Development
+- **High value:** UI components, layouts
+- **Medium value:** Navigation, state
+- **Avoid:** Platform-specific optimizations
 
 ---
 
-## ROI with AI-integrated tools
+## Quick Reference by Scenario
 
-**Monthly Investment:**
-- Tool cost: $20-40/month
-- Learning curve: 2-3 hours initial
+### "I need this done fast"
+✅ Use AI for:
+- Boilerplate
+- Mock data
+- Basic tests
+- Documentation templates
 
-**Monthly Return:**
-- Time saved: 40-80 hours
-- Better tests and docs: Invaluable
-- Reduced bugs: Fewer firefights
-- **Net ROI: 10-20x**
+### "This is business-critical"
+❌ Don't use AI for:
+- Core business logic
+- Financial calculations
+- Security features
+- Performance-critical code
 
----
+### "I'm learning this technology"
+⚠️ Limited AI use:
+- See examples
+- Understand patterns
+- But write code manually
 
-## The New Reality
-
-With AI-integrated tools, the question isn't "Should I use AI for this?" but "Why wouldn't I?"
-
-The friction is so low that even 20% improvements compound into massive productivity gains. The key is maintaining quality standards while embracing the speed.
-
----
-
-## Quick Reference
-
-**Always Use AI-Integrated Tools For:**
-Everything except security, payments, and complex architecture
-
-**Review Extra Carefully:**
-Business logic, performance code, database operations
-
-**The New Workflow:**
-Think → Comment → Generate → Review → Refine → Ship
+### "This is for production"
+Review everything:
+- Security implications
+- Performance impact
+- Error handling
+- Edge cases
 
 ---
 
-## License
-Licensed under the [Business Source License 1.1](./LICENSE)
-- Free for personal, educational, and internal use  
-- Commercial use requires a license  
-- Converts to Apache 2.0 on June 1, 2028  
+## The Bottom Line
+
+AI tools can help with **mechanical, pattern-based tasks** where:
+- The pattern is well-established
+- Errors are easy to catch
+- Security isn't critical
+- Performance isn't critical
+
+They struggle with **complex, context-dependent tasks** that need:
+- Deep domain knowledge
+- Security considerations
+- Performance optimization
+- Business logic understanding
+
+**Success requires:**
+- Knowing which is which
+- Reviewing everything
+- Maintaining your skills
+- Realistic expectations
 
 ---
 
-## ✉️ Stay Updated
-Get practical AI IDE strategies and workflow optimizations:
-👉 [Subscribe to Prompt/Deploy](https://prompt-deploy.beehiiv.com/subscribe)
-
----
-
-> With AI-integrated tools, we're not talking about 10x developers anymore.
-> We're talking about developers who ship 2-3x more features with higher quality.
-> The future isn't about WHETHER to use AI - it's about using it responsibly while maintaining engineering excellence.
+> AI tools are amplifiers, not replacements.
+> They amplify both good and bad practices.
+> Use them where they demonstrably help.
+> Skip them where they don't.
+> Always maintain your fundamental skills.
